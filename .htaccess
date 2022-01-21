@@ -1,0 +1,17 @@
+ServerSignature Off
+IndexIgnore *
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ public/$1 [L]
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+    RewriteRule ^(.*)/vendor/.*\.(php|rb|py)$ - [F,L,NC]
+    RewriteRule ^vendor/.*\.(php|rb|py)$ - [F,L,NC]
+
+
+</IfModule>
