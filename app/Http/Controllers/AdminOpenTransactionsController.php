@@ -36,7 +36,7 @@
             # START COLUMNS DO NOT REMOVE THIS LINE
             $this->col = [];
             $this->col[] = ["label"=>"Foto Masuk","name"=>"photo_check_in", "callback" => function($q){
-                $img = "https://api-sprk.pinisi-elektra.com/storage/" . $q->photo_check_in;
+                $img = "https://api.tmdspark.co.id/storage/" . $q->photo_check_in;
                 $file_headers = @get_headers($img);
                 if($file_headers[0] == 'HTTP/1.0 404 Not Found'){
                     $img = 'https://spark.pinisi-elektra.com/assets/images/no-image.jpg';

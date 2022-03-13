@@ -46,7 +46,7 @@
                 return '<a data-lightbox="roadtrip" rel="group_{open_transactions}" title="Foto Masuk: 21072710562101" href="' . $img . '"><img width="40px" height="40px" src="' . $img . '"></a>';
             }];
             $this->col[] = ["label"=>"Foto Keluar","name"=>"photo_check_out", "callback" => function($q){
-                $img = "https://api-sprk.pinisi-elektra.com/storage/" . $q->photo_check_out;
+                $img = "https://api.tmdspark.co.id/storage/" . $q->photo_check_out;
                 $file_headers = @get_headers($img);
                 if($file_headers[0] == 'HTTP/1.0 404 Not Found'){
                     $img = 'https://spark.pinisi-elektra.com/assets/images/no-image.jpg';
